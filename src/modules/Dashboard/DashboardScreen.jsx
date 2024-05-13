@@ -95,12 +95,13 @@ rowLabel = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", 
 }
 // offers graph
 const formattedData = graphData?.offers.map((item) => item[1]);
+console.log(formattedData)
 const graph_data = {
   labels: rowLabel,
   datasets: [
     {
       label: "Total Audience of the month",
-      data: formattedData,
+      data: ['', 23,43,54,23,78,34],
       backgroundColor: "rgb(255, 99, 132)",
       borderColor: "rgb(255, 99, 132)",
     },
@@ -114,7 +115,7 @@ const formatData = graphData?.audience.map((item) => item[1]);
     datasets: [
       {
         label: "Earning Graph",
-        data: formatData,
+        data: ['', 10,5,3,7,2,1,0,5],
         backgroundColor: "rgb(0, 0, 255)",
         borderColor: "rgb(0, 0, 255)",
       },
@@ -218,7 +219,8 @@ const formatData = graphData?.audience.map((item) => item[1]);
     <div class="flex flex-wrap -m-4">
       <div class="p-4 sm:w-1/4 w-1/2 border-r-2 border-gray-300">
       <h2 className="title-font font-medium text-3xl text-gray-900 ">
-             {apiInfo && apiInfo.total_scans}
+             {/* {apiInfo && apiInfo.total_scans} */}
+             3021
            </h2>
             <div className='flex flex-inline flex-row justify-between'>
             <p class="leading-relaxed text-left text-xs text-gray-600">QR code scans &nbsp;</p>
@@ -226,21 +228,30 @@ const formatData = graphData?.audience.map((item) => item[1]);
             </div>
       </div>
       <div class="p-4 sm:w-1/4 w-1/2 border-r-2 border-gray-300">
-      <h2 class="title-font font-medium text-3xl text-gray-900">{apiInfo && apiInfo.link_clicked}</h2>
+      <h2 class="title-font font-medium text-3xl text-gray-900">
+        {/* {apiInfo && apiInfo.link_clicked} */}
+        1596
+      </h2>
             <div className='flex flex-inline flex-row justify-between'>
             <p class="leading-relaxed text-left text-xs text-gray-600">Links clicked &nbsp;</p>
             <a href="#" className='underline-offset-auto text-xs text-blue-500 font-light'>Report</a>
             </div>
       </div>
       <div class="p-4 sm:w-1/4 w-1/2 border-r-2 border-gray-300">
-      <h2 class="title-font font-medium text-3xl text-gray-900">{apiInfo && apiInfo.active_users}</h2>
+      <h2 class="title-font font-medium text-3xl text-gray-900">
+        {/* {apiInfo && apiInfo.active_users} */}
+        2933
+      </h2>
             <div className='flex flex-inline flex-row justify-between'>
             <p class="leading-relaxed text-left text-xs text-gray-600">Active users &nbsp;</p>
             <a href="#" className='underline-offset-auto text-xs text-blue-500 font-light'>Report</a>
             </div>
       </div>
       <div class="p-4 sm:w-1/4 w-1/2">
-      <h2 class="title-font font-medium text-3xl text-gray-900">{apiInfo && apiInfo.earnings}</h2>
+      <h2 class="title-font font-medium text-3xl text-gray-900">
+        {/* {apiInfo && apiInfo.earnings} */}
+        USD 123
+      </h2>
             <div className='flex flex-inline flex-row justify-between'>
             <p class="leading-relaxed text-left text-xs text-gray-600">Earnings &nbsp;</p>
             <a href="#" className='underline-offset-auto text-xs text-blue-500 font-light'>Report</a>
