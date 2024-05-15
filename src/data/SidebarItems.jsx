@@ -30,13 +30,13 @@ const SidebarItems = [
     activeIcon: <IoPersonOutline color={"#24ACE3"} size={"24px"} />,
     route: "/offers-requests",
   },
-  {
-    id: 4,
-    title: "Analytics",
-    icon: <IoAnalytics color={"#AFAFAF"} size={"24px"} />,
-    activeIcon: <IoAnalytics color={"#24ACE3"} size={"24px"} />,
-    route: "/analytics",
-  },
+  // {
+  //   id: 4,
+  //   title: "Analytics",
+  //   icon: <IoAnalytics color={"#AFAFAF"} size={"24px"} />,
+  //   activeIcon: <IoAnalytics color={"#24ACE3"} size={"24px"} />,
+  //   route: "/analytics",
+  // },
   {
     id: 5,
     title: "Demographics",
@@ -51,13 +51,13 @@ const SidebarItems = [
     activeIcon: <FiMessageSquare color={"#24ACE3"} size={"24px"} />,
     route: "/growth",
   },
-  {
-    id: 7,
-    title: "Help",
-    icon: <IoHelpCircleOutline color={"#AFAFAF"} size={"24px"} />,
-    activeIcon: <IoHelpCircleOutline color={"#24ACE3"} size={"24px"} />,
-    route: "/help",
-  },
+  // {
+  //   id: 7,
+  //   title: "Help",
+  //   icon: <IoHelpCircleOutline color={"#AFAFAF"} size={"24px"} />,
+  //   activeIcon: <IoHelpCircleOutline color={"#24ACE3"} size={"24px"} />,
+  //   route: "/help",
+  // },
   {
     id: 8,
     title: "Profile Settings",
@@ -65,13 +65,13 @@ const SidebarItems = [
     activeIcon: <IoSettingsOutline color={"#24ACE3"} size={"24px"} />,
     route: "/settings",
   },
-  {
-    id: 9,
-    title: "Integrations",
-    icon: <LiaExchangeAltSolid color={"#AFAFAF"} size={"24px"} />,
-    activeIcon: <LiaExchangeAltSolid color={"#24ACE3"} size={"24px"} />,
-    route: "/integrations",
-  },
+  // {
+  //   id: 9,
+  //   title: "Integrations",
+  //   icon: <LiaExchangeAltSolid color={"#AFAFAF"} size={"24px"} />,
+  //   activeIcon: <LiaExchangeAltSolid color={"#24ACE3"} size={"24px"} />,
+  //   route: "/integrations",
+  // },
   {
     id: 10,
     title: "Billing",
@@ -86,12 +86,12 @@ const SidebarItems = [
     activeIcon: <FiBell color={"#24ACE3"} size={"24px"} />,
     route: "/notifications",
   },
-  {
-    id: 12,
-    title: "Invitations",
-    icon: <IoCalendarOutline color={"#AFAFAF"} size={"24px"} />,
-    activeIcon: <IoCalendarOutline color={"#24ACE3"} size={"24px"} />,
-    route: "/invitations",
-  },
+  // {
+  //   id: 12,
+  //   title: "Invitations",
+  //   icon: <IoCalendarOutline color={"#AFAFAF"} size={"24px"} />,
+  //   activeIcon: <IoCalendarOutline color={"#24ACE3"} size={"24px"} />,
+  //   route: "/invitations",
+  // },
 ];
 export default SidebarItems 

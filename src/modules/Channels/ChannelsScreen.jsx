@@ -7,8 +7,8 @@ function ChannelsScreen() {
     labels: ["Audience by QR Code scans", "Audience by Service Code", "Audience by invitation"],
     datasets: [
       {
-        label: "My First Dataset",
-        data: [12, 19, 3],
+        label: "Audience",
+        data: [3021, 1369, 50],
         backgroundColor: [
           "rgb(255, 192, 203)", // Light Pink
           "rgb(211, 211, 211)", // Violet
@@ -20,11 +20,11 @@ function ChannelsScreen() {
     ],
   };
   const line_data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["March", "April", "May",],
     datasets: [
       {
         label: "Audience",
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: [366, 1990, 1156 ],
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgba(255, 99, 132, 1)",
         borderWidth: 1,

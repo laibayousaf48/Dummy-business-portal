@@ -67,8 +67,8 @@ const tdClasses = `p-2 border-[1px] border-slate-100`;
     // <DashboardTemplate pageTitle={'Notification Data'}>
     
       // <div className='max-w-md mx-auto bg-white shadow-md overflow-auto md:max-w-2xl'>
-      <div className="bg-white py-10">
-        <div className="flex flex-wrap justify-between lg:flex-row sm:flex-col justify-right mb-4">
+      <div className="bg-white ">
+        {/* <div className="flex flex-wrap justify-between lg:flex-row sm:flex-col justify-right mb-4">
         <button className='m-4 p-2 bg-blue-500 text-white rounded' onClick={handleClick}>Add Notification</button>
         <button className=' ml-4 m-4 p-2 bg-blue-500 text-white rounded' onClick={(e) => {setIsModalOpen(true);}}>Send Individual Notification</button> 
         </div>
@@ -104,7 +104,7 @@ const tdClasses = `p-2 border-[1px] border-slate-100`;
             ))}
           </tbody>
         </table>
-        </div>
+        </div> */}
         
         {/* <div className="flex flex-wrap lg:flex-row sm:flex-col">
            <button className='absolute top-0 right-0 m-4 p-2 bg-blue-500 text-white rounded' onClick={handleClick}>Add Notification</button>

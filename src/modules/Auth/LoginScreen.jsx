@@ -5,7 +5,7 @@ import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext";
 // import axios from "axios";
-import { ProgressBar,DNA } from 'react-loader-spinner'
+import { ProgressBar, DNA, RotatingLines } from 'react-loader-spinner'
 
 function LoginScreen() {
   const navigate = useNavigate();
@@ -15,16 +15,16 @@ function LoginScreen() {
     AppImages.img1, AppImages.img2
     // Add more image URLs here
   ];
-   useEffect(() => {
-     const interval = setInterval(() => {
-       // Increment the index to show the next image
-       setCurrentImageIndex((prevIndex) =>
-         prevIndex === images.length - 1 ? 0 : prevIndex + 1
-       );
-     }, 2000); // Change image every 1 second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Increment the index to show the next image
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // Change image every 1 second
 
-     return () => clearInterval(interval); // Cleanup on component unmount
-   }, [images]);
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, [images]);
   const [formFields, setFormFields] = useState({
     email: "",
     password: "",
@@ -36,7 +36,7 @@ function LoginScreen() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false)
   const location = useLocation()
-  
+
   function handleSubmit(e) {
     console.log("data", formFields.email, formFields.password);
     e.preventDefault();
@@ -55,19 +55,19 @@ function LoginScreen() {
       `https://7b7xlap5jvkahyo5himfrzqy640qnadr.lambda-url.eu-west-1.on.aws/auth/login`,
       { email: formFields.email, password: formFields.password }
     ).then(res => {
-      if(res.data?.status == 200) {
-        const {token, user} = res.data?.data 
+      if (res.data?.status == 200) {
+        const { token, user } = res.data?.data
         const business = res.data.data.business // i have removes curly brckets around business
         //  console.log("response", res.data.data.business)
-        authCtx.login(token, user, location.state?.from,business);
+        authCtx.login(token, user, location.state?.from, business);
         const business_id = res.data.data.business._id;
         console.log(business_id);
         const data = res.data.data.business
         const userData = res.data.data.user;
-       console.log("Response", res.data.data.business);
+        console.log("Response", res.data.data.business);
         localStorage.setItem("Business ID", business_id);
-         localStorage.setItem("Response", JSON.stringify(data));
-         localStorage.setItem("User", JSON.stringify(userData));
+        localStorage.setItem("Response", JSON.stringify(data));
+        localStorage.setItem("User", JSON.stringify(userData));
       } else {
         throw new Error(res.data?.message ?? "Error logging you in! Please try again")
       }
@@ -153,7 +153,7 @@ function LoginScreen() {
               {/* {formErrors.password && ( */}
               <p className="my-1 text-sm text-primary pl-4">{error}</p>
               {/* )} */}
-              
+
               {/* <div className="text-[14px] text-right text-[#A9A9A9] ">
                 <span className="underline cursor-pointer hover:text-[#605e5e]">
                   {" "}
@@ -161,20 +161,22 @@ function LoginScreen() {
                 </span>
               </div> */}
 
-              {/* <Link to={`/verify/${formFields.mobile}`}> */}
-                <button className="w-full h-[56px] bg-[#1FA3DB] text-[16px] rounded-md text-white hover:bg-[#8cd2f0]  mt-4 justify-center">
-                  {isLoading ? (<ProgressBar
-                 visible={true}
-                 height="80"
-                 width="80"
-                 color="#4fa94d"
-                 ariaLabel="progress-bar-loading"
-                 wrapperStyle={{ transform: "translateX(230%)"}}
-                 wrapperClass=""
-                 />):("Sign in")}
-                </button>
-                
-                {/* <button className="w-full h-[56px] bg-[#1FA3DB] text-[16px] rounded-md text-white hover:bg-[#8cd2f0]  mt-4 justify-center">
+              <button className="w-full h-[56px] bg-[#1FA3DB] text-[16px] rounded-md text-white hover:bg-[#8cd2f0]  mt-4 justify-center">
+                Sign in
+              </button>
+           <div className="text-center ml-48 mt-4">{isLoading ? (<RotatingLines
+                  visible={true}
+                  height="86"
+                  width="86"
+                  color="grey"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  ariaLabel="rotating-lines-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />) : (null)}
+                </div>
+              {/* <button className="w-full h-[56px] bg-[#1FA3DB] text-[16px] rounded-md text-white hover:bg-[#8cd2f0]  mt-4 justify-center">
                   {isLoading ? (<DNA
                     visible={true}
                     height="80"
@@ -191,7 +193,7 @@ function LoginScreen() {
               {/* </Link> */}
             </div>
           </form>
-          <div className="text-[16px] text-[#A9A9A9] text-center mt-[41px]">
+          {/* <div className="text-[16px] text-[#A9A9A9] text-center mt-[41px]">
             Don't have an account ?
             <span
               className="text-[16px] text-[#24ACE3] ml-1 cursor-pointer hover:text-[#8cd2ee]"
@@ -201,7 +203,7 @@ function LoginScreen() {
             >
               Sign up
             </span>
-          </div>
+          </div> */}
         </div>
         <div className="w-[50%] h-screen border-[1px] py-[5%] pl-[100px] border-gray-300 bg-[#1FA3DB] relative">
           <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">

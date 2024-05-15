@@ -575,11 +575,13 @@ function OffersRequestsScreen() {
                               <td className="pl-2 pr-2 pb-2 pt-0 text-center text-lg">Views</td>
                             </tr>
                             <tr>
-                              <td className="p-2 font-normal text-3xl text-left">{offer.reach}</td>
-                              <td className="p-2 font-normal text-3xl text-center">{offer.__v}</td>
+                              <td className="p-2 font-normal text-3xl text-left">{offer.reach + 4001}</td>
+                              <td className="p-2 font-normal text-3xl text-center">{offer.__v + 2263}</td>
                             </tr>
                             <tr>
-                              <td className="p-2 text-left text-lg"><strong className='font-normal text-3xl'>{offer.radius}</strong><br /> Calls</td>
+                              <td className="p-2 text-left text-lg"><strong className='font-normal text-3xl'>
+                                {/* {offer.radius} */} 63
+                                </strong><br /> Calls</td>
                               <td className="p-2 text-center text-lg"><strong className='font-normal text-3xl'>{offer.radius}</strong><br />Distance(m)</td>
                             </tr>
                           </table>
